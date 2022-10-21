@@ -31,7 +31,7 @@ function App() {
       // document.getElementById("myBox").style.backgroundColor = 'rgb(58 58 63)';
       // document.getElementById("myBox").style.color = '#fff';
       showAlert("Dark Mode has been enabled.", "success");
-      document.title = "TextUtils - DartMode";
+      // document.title = "TextUtils - DartMode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "#fff";
@@ -39,7 +39,7 @@ function App() {
       // document.getElementById("myBox").style.backgroundColor = '#fff';
       // document.getElementById("myBox").style.color = 'rgb(58 58 63)';
       showAlert("Light Mode has been enabled.", "success");
-      document.title = "TextUtils - LightMode";
+      // document.title = "TextUtils - LightMode";
     }
   };
 
@@ -51,11 +51,11 @@ function App() {
       <Navbar heading="TextUtils" about="About Us" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <Switch>
-        <Route path="/about">
-          <About />
+        <Route exact path="/about">
+          <About mode={mode}/>
         </Route>
-        <Route path="/">
-          <TextForm heading="Enter text to analyze..." mode={mode} toggleMode={toggleMode} showAlert={showAlert} />
+        <Route exact path="/">
+          <TextForm heading="Word-Character counter, Uppercase-Lowercase, Extra space remove" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />
         </Route>
       </Switch>
       </Router>
