@@ -19,8 +19,6 @@ export default function TextForm(props) {
     }
     
     const handleCopyClick = ()=>{
-        var textarea = document.getElementById("myBox");
-        textarea.select();
         navigator.clipboard.writeText(text);
         props.showAlert("Copied to Clipboard!.", "success");
     }
@@ -72,8 +70,8 @@ export default function TextForm(props) {
 
       <div className="container my-3">
         <h1>Your text summary</h1>
-        <p>{text.split(" ").filter((element)=>{ return element.length !== 0}).length} words and {text.length} Characters.</p>
-        <p>{0.008 * text.split(" ").filter((element=>{return element.length !== 0})).length } Minutes read</p>
+        <p>{text.split(/\s+/).filter((element)=>{ return element.length !== 0}).length} words and {text.length} Characters.</p>
+        <p>{0.008 * text.split(/\s+/).filter((element=>{return element.length !== 0})).length } Minutes read</p>
         <p>Preview</p>
         <p style={preview}>{text.length > 0 ? text : "Noting to preview."}</p>
       </div>

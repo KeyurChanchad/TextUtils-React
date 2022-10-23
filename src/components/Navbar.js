@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom';
 
 
 export default function Navbar(props) {
-  const selectColor = ()=>{
-    let color = document.getElementById('color').value;
-    // console.log(`You have selected ${color} color`);
-    document.body.style.backgroundColor = color;
-    document.body.style.color = '#a8baca';
-  }
+  // const selectColor = ()=>{
+  //   let color = document.getElementById('color').value;
+  //   // console.log(`You have selected ${color} color`);
+  //   document.body.style.backgroundColor = color;
+  //   document.body.style.color = '#a8baca';
+  // }
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
@@ -42,8 +42,8 @@ export default function Navbar(props) {
             </label>
           </div>
 
-          <label htmlFor="color" className="form-label m-2">Background Color</label>
-          <input type="color" className="form-control form-control-color" id="color" title="Choose your color" onChange={selectColor}/>
+          {/* <label htmlFor="color" className="form-label m-2">Background Color</label>
+          <input type="color" className="form-control form-control-color" id="color" title="Choose your color" onChange={selectColor}/> */}
         </div>
       </div>
     </nav>
